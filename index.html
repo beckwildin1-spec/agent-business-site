@@ -3,63 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Small Landlord Command Center: Google Sheets rent, expense &amp; repair tracker</title>
-<meta name="description" content="A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. For DIY landlords with 1-4 units.">
+<title>Small-business Google Sheets trackers: private practice billing &amp; landlord records</title>
+<meta name="description" content="Google Sheets trackers for small businesses: a billing and income tracker for therapists in private practice, and a rent, expense and repair tracker for DIY landlords. Coming soon on Etsy.">
 <!-- PINTEREST SITE VERIFICATION: paste the meta tag Pinterest gives you on the next line (public tag, not a secret).
      Expected shape (from memory, not verified): <meta name="p:domain_verify" content="CODE_FROM_PINTEREST"> -->
 <!-- PINTEREST_VERIFY_SLOT -->
 <!-- ANALYTICS PLACEHOLDER: intentionally empty. If the team picks a privacy-friendly counter, its snippet goes here. -->
 <style>
-:root { --g:#2f5d50; --bg:#f7f6f2; }
+:root { --g:#2f5d50; --b:#3d5a80; --bg:#f7f6f2; }
 * { box-sizing:border-box; }
 body { margin:0; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.5; }
 .wrap { max-width:760px; margin:0 auto; padding:24px 18px 48px; }
-header h1 { font-size:2rem; line-height:1.2; margin:8px 0; color:var(--g); }
-header p.sub { font-size:1.1rem; margin:0 0 18px; }
-.card { background:#fff; border:1px solid #ddd; border-radius:10px; padding:18px; margin:18px 0; }
-h2 { font-size:1.25rem; margin:0 0 10px; color:var(--g); }
-ul { padding-left:20px; margin:0; } li { margin:6px 0; }
-.buy { text-align:center; }
-.price { font-size:1.4rem; font-weight:bold; margin:4px 0 10px; }
-.btn { display:inline-block; padding:14px 28px; border-radius:8px; font-size:1.1rem; font-weight:bold; text-decoration:none; background:var(--g); color:#fff; border:0; }
-.btn[aria-disabled="true"] { background:#9aa9a4; cursor:not-allowed; pointer-events:none; }
+header h1 { font-size:1.9rem; line-height:1.2; margin:8px 0; color:#333; }
+header p.sub { font-size:1.05rem; margin:0 0 10px; }
+.product { background:#fff; border:1px solid #ddd; border-radius:12px; padding:20px; margin:24px 0; }
+.product.t { border-top:6px solid var(--b); }
+.product.l { border-top:6px solid var(--g); }
+.product h2 { font-size:1.45rem; margin:0 0 4px; }
+.t h2, .t h3 { color:var(--b); } .l h2, .l h3 { color:var(--g); }
+h3 { font-size:1.05rem; margin:16px 0 6px; }
+ul { padding-left:20px; margin:0; } li { margin:5px 0; }
+.buy { text-align:center; margin:14px 0 6px; }
+.btn { display:inline-block; padding:13px 26px; border-radius:8px; font-size:1.05rem; font-weight:bold; text-decoration:none; color:#fff; border:0; }
+.t .btn { background:var(--b); } .l .btn { background:var(--g); }
+.btn[aria-disabled="true"] { background:#9aa3ad !important; cursor:not-allowed; pointer-events:none; }
 .small { font-size:.85rem; color:#555; }
+.note { background:#fdf0ef; border-left:5px solid #b42318; padding:8px 12px; margin:10px 0; font-size:.95rem; }
 table { width:100%; border-collapse:collapse; font-size:.9rem; }
 th, td { border:1px solid #ccc; padding:6px 8px; text-align:left; }
-th { background:#e6efec; }
+.t th { background:#e4ebf4; } .l th { background:#e6efec; }
 td.num { text-align:right; }
-.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.8rem; font-weight:bold; }
+.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.75rem; font-weight:bold; vertical-align:middle; }
 footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:28px; padding-top:12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <h1>Small Landlord Command Center</h1>
-  <p class="sub">A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. Made for DIY landlords with 1–4 units.</p>
+  <h1>Google Sheets trackers for small businesses</h1>
+  <p class="sub">Simple spreadsheets that live in your own Google account. Two trackers are in progress. Both are <b>coming soon on Etsy</b>.</p>
 </header>
 
-<div class="card buy">
-  <div class="price">Planned price: $12 (one-time digital download)</div>
-  <a id="buy" class="btn" aria-disabled="true" role="button">Coming soon</a>
-  <p class="small">Not on sale yet. This button will go live when the product is published.</p>
-</div>
+<!-- PRODUCT 1: THERAPIST TRACKER -->
+<section class="product t" id="therapist">
+  <h2>Private Practice Billing &amp; Income Tracker</h2>
+  <p>A Google Sheets tracker for solo therapists and counselors in private practice: sessions, payments, insurance claim status and expenses, with a yearly summary worked out by formula.</p>
+  <div class="note"><b>Built for client codes, not names.</b> Every tab says: "Do not enter client names or health information; use codes only." The Client Code column accepts only codes like C-001.</div>
 
-<div class="card">
-  <h2>What's included</h2>
+  <div class="buy">
+    <a id="buy-therapist" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
+    <p class="small">Not on sale yet. This button goes live when the Etsy listing is published.</p>
+  </div>
+
+  <h3>What's included</h3>
+  <ul>
+    <li><b>Sessions:</b> date, client code, service, in person or telehealth, fee, payer type, attendance (attended, late cancel, no-show). Paid to Date and Balance Due fill in on their own.</li>
+    <li><b>Payments:</b> client and insurance payments, each linked to a session.</li>
+    <li><b>Insurance Claims Status:</b> date submitted, status (Submitted, Pending, Paid, Denied, Resubmitted…), days open, follow-up date.</li>
+    <li><b>Expenses:</b> category dropdown, vendor, amount, receipt link.</li>
+    <li><b>Yearly Summary:</b> sessions, fees charged, payments received, open balances, claim counts, expenses by category, net and a month-by-month table. Change one cell to switch the year.</li>
+    <li>An Instructions tab and labeled example data. You get a "Make a copy" link, so the Sheet lives in your own Google account.</li>
+  </ul>
+
+  <h3>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h3>
+  <p class="small">Made-up numbers for made-up clients C-001 to C-004 over two months, so you can see the layout. Not real results or a typical outcome.</p>
+  <table>
+    <tr><th>Item</th><th>2025 (example)</th></tr>
+    <tr><td>Sessions attended</td><td class="num">13</td></tr>
+    <tr><td>Fees charged</td><td class="num">$1,870.00</td></tr>
+    <tr><td>Payments received (clients + insurance)</td><td class="num">$1,365.00</td></tr>
+    <tr><td>Balance still due</td><td class="num">$445.00</td></tr>
+    <tr><td>Claims still open / denied</td><td class="num">2 / 1</td></tr>
+    <tr><td>Total expenses</td><td class="num">$1,037.15</td></tr>
+    <tr><td><b>Net (payments − expenses)</b></td><td class="num"><b>$327.85</b></td></tr>
+  </table>
+
+  <h3>What it is not</h3>
+  <ul>
+    <li>Not HIPAA-compliant software, an EHR or a billing service. We make no compliance claim.</li>
+    <li>No fields for names, dates of birth, member IDs, diagnoses or session notes.</li>
+    <li>No tax, legal or billing advice. Expense categories are only for organizing.</li>
+  </ul>
+</section>
+
+<!-- PRODUCT 2: LANDLORD TRACKER -->
+<section class="product l" id="landlord">
+  <h2>Small Landlord Command Center</h2>
+  <p>A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. Made for DIY landlords with 1–4 units.</p>
+
+  <div class="buy">
+    <a id="buy-landlord" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
+    <p class="small">Not on sale yet. This button goes live when the Etsy listing is published.</p>
+  </div>
+
+  <h3>What's included</h3>
   <ul>
     <li><b>Rent tab:</b> one row per month per unit: rent due, amount paid, date paid, late Y/N.</li>
     <li><b>Expenses tab:</b> date, property, category (dropdown), amount, vendor, receipt link.</li>
     <li><b>Repairs tab:</b> date reported, unit, issue, vendor, cost, date fixed, status.</li>
-    <li><b>Yearly Summary tab:</b> rent collected, expenses by category, <b>repair costs</b>, total costs and net for the year, all calculated by formula. Type a different year in one cell to see that year.</li>
+    <li><b>Yearly Summary tab:</b> rent collected, expenses by category, repair costs, total costs and net for the year, all calculated by formula.</li>
     <li><b>Printable binder (PDF, US Letter, 7 pages):</b> property sheet, tenant contact sheet, move-in/move-out inspection checklist, maintenance request log and rent receipt log.</li>
-    <li>You get a "Make a copy" link, so the Sheet lives in your own Google account.</li>
   </ul>
-</div>
 
-<div class="card">
-  <h2>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h2>
-  <p class="small">Made-up numbers for one made-up unit ("Unit A, 12 Maple St") so you can see how the summary is laid out. Not a real property, real results or a typical outcome.</p>
+  <h3>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h3>
+  <p class="small">Made-up numbers for one made-up unit ("Unit A, 12 Maple St"). Not a real property, real results or a typical outcome.</p>
   <table>
     <tr><th>Item</th><th>2025 (example)</th></tr>
     <tr><td>Rent collected</td><td class="num">$13,800</td></tr>
@@ -68,38 +115,43 @@ footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:28p
     <tr><td>Total costs</td><td class="num">$5,138</td></tr>
     <tr><td><b>Net (rent − total costs)</b></td><td class="num"><b>$8,662</b></td></tr>
   </table>
-</div>
 
-<div class="card">
-  <h2>What it is not</h2>
+  <h3>What it is not</h3>
   <ul>
     <li>No leases, eviction notices or state-specific legal forms.</li>
     <li>No tax advice. Expense categories are only for keeping things organized.</li>
     <li>It's not property-management software. It's a spreadsheet you keep and edit yourself.</li>
   </ul>
-</div>
+</section>
 
 <footer>
-  <p>Organizational tool only. Not legal or tax advice. All numbers shown on this page are fictional example data.</p>
+  <p>Organizational tools only. Not tax, legal, billing or compliance advice. All numbers on this page are fictional example data. No reviews are shown because nothing has sold yet.</p>
 </footer>
 </div>
 
 <script>
-// Leave GUMROAD_URL empty until the real product exists. While it's empty the button stays disabled.
-var GUMROAD_URL = "";
+// Leave each URL empty until its real Etsy listing exists. While a URL is empty, its button stays disabled.
+// No prices are set here. Etsy shows the live price on the listing.
+var LISTINGS = {
+  "buy-therapist": "",
+  "buy-landlord": ""
+};
 (function () {
-  var btn = document.getElementById('buy');
-  if (!GUMROAD_URL) return;
   var page = new URLSearchParams(window.location.search);
-  var out = new URL(GUMROAD_URL);
-  var found = false;
-  page.forEach(function (v, k) {
-    if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
+  Object.keys(LISTINGS).forEach(function (id) {
+    var url = LISTINGS[id];
+    var btn = document.getElementById(id);
+    if (!url || !btn) return;
+    var out = new URL(url);
+    var found = false;
+    page.forEach(function (v, k) {
+      if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
+    });
+    if (!found || !out.searchParams.get('utm_source')) out.searchParams.set('utm_source', 'direct');
+    btn.href = out.toString();
+    btn.removeAttribute('aria-disabled');
+    btn.textContent = 'View on Etsy';
   });
-  if (!found || !out.searchParams.get('utm_source')) out.searchParams.set('utm_source', 'direct');
-  btn.href = out.toString();
-  btn.removeAttribute('aria-disabled');
-  btn.textContent = 'Get it on Gumroad ($12)';
 })();
 </script>
 </body>
