@@ -1,2 +1,104 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coming soon</title></head>
-<body style="font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0"><p>Coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Small Landlord Command Center: Google Sheets rent, expense &amp; repair tracker</title>
+<meta name="description" content="A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. For DIY landlords with 1-4 units.">
+<!-- PINTEREST SITE VERIFICATION: paste the meta tag Pinterest gives you on the next line (public tag, not a secret). -->
+<!-- ANALYTICS PLACEHOLDER: intentionally empty. If the team picks a privacy-friendly counter, its snippet goes here. -->
+<style>
+:root { --g:#2f5d50; --bg:#f7f6f2; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 48px; }
+header h1 { font-size:2rem; line-height:1.2; margin:8px 0; color:var(--g); }
+header p.sub { font-size:1.1rem; margin:0 0 18px; }
+.card { background:#fff; border:1px solid #ddd; border-radius:10px; padding:18px; margin:18px 0; }
+h2 { font-size:1.25rem; margin:0 0 10px; color:var(--g); }
+ul { padding-left:20px; margin:0; } li { margin:6px 0; }
+.buy { text-align:center; }
+.price { font-size:1.4rem; font-weight:bold; margin:4px 0 10px; }
+.btn { display:inline-block; padding:14px 28px; border-radius:8px; font-size:1.1rem; font-weight:bold; text-decoration:none; background:var(--g); color:#fff; border:0; }
+.btn[aria-disabled="true"] { background:#9aa9a4; cursor:not-allowed; pointer-events:none; }
+.small { font-size:.85rem; color:#555; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th, td { border:1px solid #ccc; padding:6px 8px; text-align:left; }
+th { background:#e6efec; }
+td.num { text-align:right; }
+.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.8rem; font-weight:bold; }
+footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:28px; padding-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Small Landlord Command Center</h1>
+  <p class="sub">A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. Made for DIY landlords with 1–4 units.</p>
+</header>
+
+<div class="card buy">
+  <div class="price">Planned price: $12 (one-time digital download)</div>
+  <a id="buy" class="btn" aria-disabled="true" role="button">Coming soon</a>
+  <p class="small">Not on sale yet. This button will go live when the product is published.</p>
+</div>
+
+<div class="card">
+  <h2>What's included</h2>
+  <ul>
+    <li><b>Rent tab:</b> one row per month per unit: rent due, amount paid, date paid, late Y/N.</li>
+    <li><b>Expenses tab:</b> date, property, category (dropdown), amount, vendor, receipt link.</li>
+    <li><b>Repairs tab:</b> date reported, unit, issue, vendor, cost, date fixed, status.</li>
+    <li><b>Yearly Summary tab:</b> rent collected, expenses by category, <b>repair costs</b>, total costs and net for the year, all calculated by formula. Type a different year in one cell to see that year.</li>
+    <li><b>Printable binder (PDF, US Letter, 7 pages):</b> property sheet, tenant contact sheet, move-in/move-out inspection checklist, maintenance request log and rent receipt log.</li>
+    <li>You get a "Make a copy" link, so the Sheet lives in your own Google account.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h2>
+  <p class="small">Made-up numbers for one made-up unit ("Unit A, 12 Maple St") so you can see how the summary is laid out. Not a real property, real results or a typical outcome.</p>
+  <table>
+    <tr><th>Item</th><th>2025 (example)</th></tr>
+    <tr><td>Rent collected</td><td class="num">$13,800</td></tr>
+    <tr><td>Expenses (insurance, property tax, utilities, supplies)</td><td class="num">$4,898</td></tr>
+    <tr><td>Repair costs (1 repair)</td><td class="num">$240</td></tr>
+    <tr><td>Total costs</td><td class="num">$5,138</td></tr>
+    <tr><td><b>Net (rent − total costs)</b></td><td class="num"><b>$8,662</b></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>What it is not</h2>
+  <ul>
+    <li>No leases, eviction notices or state-specific legal forms.</li>
+    <li>No tax advice. Expense categories are only for keeping things organized.</li>
+    <li>It's not property-management software. It's a spreadsheet you keep and edit yourself.</li>
+  </ul>
+</div>
+
+<footer>
+  <p>Organizational tool only. Not legal or tax advice. All numbers shown on this page are fictional example data.</p>
+</footer>
+</div>
+
+<script>
+// Leave GUMROAD_URL empty until the real product exists. While it's empty the button stays disabled.
+var GUMROAD_URL = "";
+(function () {
+  var btn = document.getElementById('buy');
+  if (!GUMROAD_URL) return;
+  var page = new URLSearchParams(window.location.search);
+  var out = new URL(GUMROAD_URL);
+  var found = false;
+  page.forEach(function (v, k) {
+    if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), v); found = true; }
+  });
+  if (!found || !out.searchParams.get('utm_source')) out.searchParams.set('utm_source', 'direct');
+  btn.href = out.toString();
+  btn.removeAttribute('aria-disabled');
+  btn.textContent = 'Get it on Gumroad ($12)';
+})();
+</script>
+</body>
+</html>
