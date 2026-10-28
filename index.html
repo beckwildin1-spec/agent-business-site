@@ -94,7 +94,7 @@ var GUMROAD_URL = "";
   var out = new URL(GUMROAD_URL);
   var found = false;
   page.forEach(function (v, k) {
-    if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), v); found = true; }
+    if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
   });
   if (!found || !out.searchParams.get('utm_source')) out.searchParams.set('utm_source', 'direct');
   btn.href = out.toString();

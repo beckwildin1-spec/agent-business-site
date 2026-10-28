@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start here: Small Landlord Command Center</title>
+<meta name="description" content="How to copy and use the Small Landlord Command Center Google Sheets tracker.">
+<meta name="robots" content="noindex">
+<style>
+:root { --g:#2f5d50; --bg:#f7f6f2; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.55; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 48px; }
+h1 { font-size:1.8rem; color:var(--g); margin:8px 0; }
+h2 { font-size:1.2rem; color:var(--g); margin:0 0 8px; }
+.card { background:#fff; border:1px solid #ddd; border-radius:10px; padding:18px; margin:18px 0; }
+ol, ul { padding-left:22px; margin:0; } li { margin:6px 0; }
+code { background:#eef3f1; padding:1px 5px; border-radius:4px; }
+.small { font-size:.85rem; color:#555; }
+footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:28px; padding-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Start here</h1>
+<p>A quick guide for the Small Landlord Command Center. The "Make a copy" link and the binder PDF are in your Gumroad purchase. This page explains how to use them.</p>
+
+<div class="card">
+  <h2>1. Copy the Sheet (1 minute)</h2>
+  <ol>
+    <li>Open the "Make a copy" link from your Gumroad purchase. A computer is easiest for this.</li>
+    <li>Sign in to your Google account if asked, then click <b>Make a copy</b>.</li>
+    <li>The copy is saved in your own Google Drive. Only you can see it unless you share it.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>2. Clear the example rows</h2>
+  <p>Every tab starts with fictional example rows for "12 Maple St (example), Unit A". They're labeled <code>EXAMPLE DATA - fictional - delete before use</code>.</p>
+  <ol>
+    <li>Look at the <b>Summary</b> tab once, so you can see how the example rows feed the totals.</li>
+    <li>On the <b>Rent</b>, <b>Expenses</b> and <b>Repairs</b> tabs, select the example rows (row 2 down), right-click and choose <b>Delete rows</b>. Keep row 1, the headers.</li>
+    <li>Don't delete or rename the tabs. The Summary formulas use the names Rent, Expenses, Repairs and Summary.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>3. Everyday use</h2>
+  <ul>
+    <li><b>Rent:</b> add one row per unit per month. Mark Late as <code>Y</code> or <code>N</code>.</li>
+    <li><b>Expenses:</b> pick a category from the dropdown. If a category isn't in the list, use <code>Other</code>. The Summary's "uncategorized check" line should stay at 0.</li>
+    <li><b>Repairs:</b> log repairs <b>here only</b>, not in Expenses. The Summary adds repairs separately, so logging them in both places would count them twice.</li>
+    <li><b>More units or properties:</b> just add rows. The formulas read whole columns. v1 totals all properties together.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>4. Year-end summary</h2>
+  <ol>
+    <li>Open the <b>Summary</b> tab.</li>
+    <li>Type the year you want in cell <code>B1</code>, for example <code>2026</code>.</li>
+    <li>Rent collected, expenses by category, repair costs, total costs, net and the late-payment count all update for that year.</li>
+  </ol>
+  <p class="small">The categories are only for organizing. Ask a tax professional how to report anything.</p>
+</div>
+
+<div class="card">
+  <h2>5. Printable binder</h2>
+  <p>The binder PDF (US Letter, 7 pages) has a cover, property sheet, tenant contact sheet, move-in/move-out inspection checklist (2 pages), maintenance request log and rent receipt log. Print the pages you need. The inspection checklist is meant to be printed once per move-in and once per move-out.</p>
+</div>
+
+<div class="card">
+  <h2>Something not working?</h2>
+  <p>If a Summary cell shows an error, the most common cause is a renamed tab or a misspelled category. Check that the tab names are exactly Rent, Expenses, Repairs and Summary, and that categories come from the dropdown. For anything else, reply to your Gumroad receipt email.</p>
+</div>
+
+<footer>
+  <p>Organizational tool only. Not legal or tax advice. All example numbers are fictional.</p>
+  <p>AI disclosure: this page, the spreadsheet layout and its formulas were written with help from an AI assistant (Claude, by Anthropic), then checked by the team that publishes it.</p>
+  <p><a href="index.html">Back to the product page</a></p>
+</footer>
+</div>
+</body>
+</html>
