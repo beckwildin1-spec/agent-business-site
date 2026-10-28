@@ -3,154 +3,152 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Small-business Google Sheets trackers: private practice billing &amp; landlord records</title>
-<meta name="description" content="Google Sheets trackers for small businesses: a billing and income tracker for therapists in private practice, and a rent, expense and repair tracker for DIY landlords. Coming soon on Etsy.">
-<!-- PINTEREST SITE VERIFICATION: paste the meta tag Pinterest gives you on the next line (public tag, not a secret).
-     Expected shape (from memory, not verified): <meta name="p:domain_verify" content="CODE_FROM_PINTEREST"> -->
+<title>Private Practice Billing &amp; Income Tracker (Google Sheets template)</title>
+<meta name="description" content="A Google Sheets template for solo therapists and counselors: sessions, payments, insurance claim status, expenses and a yearly summary. Built for client codes, not names. Sold on Etsy.">
+<!-- PINTEREST SITE VERIFICATION: paste the meta tag Pinterest gives you on the next line (public tag, not a secret). -->
 <!-- PINTEREST_VERIFY_SLOT -->
-<!-- ANALYTICS PLACEHOLDER: intentionally empty. If the team picks a privacy-friendly counter, its snippet goes here. -->
 <style>
-:root { --g:#2f5d50; --b:#3d5a80; --bg:#f7f6f2; }
+:root { --b:#3d5a80; --r:#b42318; --bg:#f7f6f2; }
 * { box-sizing:border-box; }
-body { margin:0; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.5; }
-.wrap { max-width:760px; margin:0 auto; padding:24px 18px 48px; }
-header h1 { font-size:1.9rem; line-height:1.2; margin:8px 0; color:#333; }
-header p.sub { font-size:1.05rem; margin:0 0 10px; }
-.product { background:#fff; border:1px solid #ddd; border-radius:12px; padding:20px; margin:24px 0; }
-.product.t { border-top:6px solid var(--b); }
-.product.l { border-top:6px solid var(--g); }
-.product h2 { font-size:1.45rem; margin:0 0 4px; }
-.t h2, .t h3 { color:var(--b); } .l h2, .l h3 { color:var(--g); }
-h3 { font-size:1.05rem; margin:16px 0 6px; }
-ul { padding-left:20px; margin:0; } li { margin:5px 0; }
-.buy { text-align:center; margin:14px 0 6px; }
-.btn { display:inline-block; padding:13px 26px; border-radius:8px; font-size:1.05rem; font-weight:bold; text-decoration:none; color:#fff; border:0; }
-.t .btn { background:var(--b); } .l .btn { background:var(--g); }
-.btn[aria-disabled="true"] { background:#9aa3ad !important; cursor:not-allowed; pointer-events:none; }
+body { margin:0; font-family:-apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 48px; }
+h1 { font-size:1.9rem; line-height:1.2; margin:8px 0 6px; color:var(--b); }
+h2 { font-size:1.25rem; color:var(--b); margin:28px 0 8px; }
+.sub { font-size:1.05rem; margin:0 0 12px; }
+.card { background:#fff; border:1px solid #ddd; border-radius:12px; padding:18px 20px; margin:18px 0; }
+.buy { text-align:center; margin:18px 0 6px; }
+.btn { display:inline-block; padding:14px 30px; border-radius:8px; font-size:1.1rem; font-weight:bold; text-decoration:none; color:#fff; background:var(--b); }
+.btn[aria-disabled="true"] { background:#9aa3ad; cursor:not-allowed; pointer-events:none; }
 .small { font-size:.85rem; color:#555; }
-.note { background:#fdf0ef; border-left:5px solid #b42318; padding:8px 12px; margin:10px 0; font-size:.95rem; }
-table { width:100%; border-collapse:collapse; font-size:.9rem; }
-th, td { border:1px solid #ccc; padding:6px 8px; text-align:left; }
-.t th { background:#e4ebf4; } .l th { background:#e6efec; }
-td.num { text-align:right; }
-.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.75rem; font-weight:bold; vertical-align:middle; }
-footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:28px; padding-top:12px; }
+.note { background:#fdf0ef; border-left:5px solid var(--r); padding:10px 14px; margin:12px 0; }
+ul { padding-left:20px; margin:0; } li { margin:5px 0; }
+.shot { overflow-x:auto; margin:10px 0 4px; }
+table { border-collapse:collapse; font-size:.85rem; background:#fff; min-width:100%; }
+th, td { border:1px solid #cfd6df; padding:5px 8px; text-align:left; white-space:nowrap; }
+th { background:#dfe7f2; }
+td.n { text-align:right; } td.auto { background:#f3f3f3; font-style:italic; } td.due { background:#fde9c8; }
+.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.72rem; font-weight:bold; vertical-align:middle; }
+.steps { counter-reset:s; list-style:none; padding:0; }
+.steps li { counter-increment:s; padding-left:34px; position:relative; margin:8px 0; }
+.steps li::before { content:counter(s); position:absolute; left:0; top:0; width:24px; height:24px; border-radius:50%; background:var(--b); color:#fff; text-align:center; font-weight:bold; font-size:.85rem; line-height:24px; }
+footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:30px; padding-top:12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
+
 <header>
-  <h1>Google Sheets trackers for small businesses</h1>
-  <p class="sub">Simple spreadsheets that live in your own Google account. Two trackers are in progress. Both are <b>coming soon on Etsy</b>.</p>
+  <h1>Private Practice Billing &amp; Income Tracker</h1>
+  <p class="sub">A Google Sheets template for solo therapists and counselors. Log sessions, payments, insurance claim status and expenses in one file. Your yearly totals are worked out by formula.</p>
 </header>
 
-<!-- PRODUCT 1: THERAPIST TRACKER -->
-<section class="product t" id="therapist">
-  <h2>Private Practice Billing &amp; Income Tracker</h2>
-  <p>A Google Sheets tracker for solo therapists and counselors in private practice: sessions, payments, insurance claim status and expenses, with a yearly summary worked out by formula.</p>
-  <div class="note"><b>Built for client codes, not names.</b> Every tab says: "Do not enter client names or health information; use codes only." The Client Code column accepts only codes like C-001.</div>
+<div class="note"><b>Built for client codes, not names.</b> Every tab says "use codes only." The Client Code column accepts only codes like C-001, so a typed name is rejected. Client codes reduce what's stored but don't make records de-identified.</div>
 
-  <div class="buy">
-    <a id="buy-therapist" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
-    <p class="small">Not on sale yet. This button goes live when the Etsy listing is published.</p>
-  </div>
+<div class="buy">
+  <a id="buy-etsy" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
+  <p class="small">Sold and delivered through Etsy. The current price is shown on the Etsy listing.</p>
+</div>
 
-  <h3>What's included</h3>
+<h2>What's in the file</h2>
+<div class="card">
   <ul>
-    <li><b>Sessions:</b> date, client code, service, in person or telehealth, fee, payer type, attendance (attended, late cancel, no-show). Paid to Date and Balance Due fill in on their own.</li>
+    <li><b>Sessions:</b> date, client code, service, in person or telehealth, minutes, fee, payer type, attendance. <i>Paid to Date</i> and <i>Balance Due</i> fill in on their own.</li>
     <li><b>Payments:</b> client and insurance payments, each linked to a session.</li>
-    <li><b>Insurance Claims Status:</b> date submitted, status (Submitted, Pending, Paid, Denied, Resubmitted…), days open, follow-up date.</li>
-    <li><b>Expenses:</b> category dropdown, vendor, amount, receipt link.</li>
-    <li><b>Yearly Summary:</b> sessions, fees charged, payments received, open balances, claim counts, expenses by category, net and a month-by-month table. Change one cell to switch the year.</li>
-    <li>An Instructions tab and labeled example data. You get a "Make a copy" link, so the Sheet lives in your own Google account.</li>
+    <li><b>Insurance Claims Status:</b> date submitted, amount billed, status (Not submitted, Submitted, Pending, Paid, Partially paid, Denied, Resubmitted, Written off), insurer paid, days open, follow-up date.</li>
+    <li><b>Expenses:</b> 10 categories (rent/office, software &amp; EHR, liability insurance, licensing &amp; CE and more), vendor, amount, receipt link.</li>
+    <li><b>Yearly Summary:</b> sessions, fees, adjustments, balance due, payments by source, claim counts, expenses by category, net, and a month-by-month table. Change the year in one cell.</li>
+    <li><b>Instructions tab</b> and labeled, fictional example rows that you delete before you start.</li>
   </ul>
+</div>
 
-  <h3>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h3>
-  <p class="small">Made-up numbers for made-up clients C-001 to C-004 over two months, so you can see the layout. Not real results or a typical outcome.</p>
-  <table>
-    <tr><th>Item</th><th>2025 (example)</th></tr>
-    <tr><td>Sessions attended</td><td class="num">13</td></tr>
-    <tr><td>Fees charged</td><td class="num">$1,870.00</td></tr>
-    <tr><td>Payments received (clients + insurance)</td><td class="num">$1,365.00</td></tr>
-    <tr><td>Balance still due</td><td class="num">$445.00</td></tr>
-    <tr><td>Claims still open / denied</td><td class="num">2 / 1</td></tr>
-    <tr><td>Total expenses</td><td class="num">$1,037.15</td></tr>
-    <tr><td><b>Net (payments − expenses)</b></td><td class="num"><b>$327.85</b></td></tr>
-  </table>
+<h2>A look inside <span class="tag">EXAMPLE DATA, fictional</span></h2>
+<p class="small">These are the template's own example rows: five made-up sessions for codes C-001 to C-005. They aren't real results or a typical outcome.</p>
 
-  <h3>What it is not</h3>
+<div class="card">
+  <b>Sessions tab</b>
+  <div class="shot"><table>
+    <tr><th>Session ID</th><th>Date</th><th>Client Code</th><th>Service</th><th>Attendance</th><th>Fee</th><th>Paid to Date (auto)</th><th>Adjustment</th><th>Balance Due (auto)</th></tr>
+    <tr><td>S-0001</td><td>2026-09-08</td><td>C-001</td><td>Intake</td><td>Attended</td><td class="n">$180.00</td><td class="n auto">$180.00</td><td></td><td class="n auto">$0.00</td></tr>
+    <tr><td>S-0002</td><td>2026-09-15</td><td>C-002</td><td>Individual</td><td>Attended</td><td class="n">$150.00</td><td class="n auto">$120.00</td><td class="n">$30.00</td><td class="n auto">$0.00</td></tr>
+    <tr><td>S-0003</td><td>2026-09-22</td><td>C-003</td><td>Individual</td><td>Attended</td><td class="n">$90.00</td><td class="n auto">$90.00</td><td></td><td class="n auto">$0.00</td></tr>
+    <tr><td>S-0004</td><td>2026-10-06</td><td>C-004</td><td>Couples</td><td>Late cancel</td><td class="n">$50.00</td><td class="n auto">$0.00</td><td></td><td class="n due">$50.00</td></tr>
+    <tr><td>S-0005</td><td>2026-10-13</td><td>C-005</td><td>Individual</td><td>Attended</td><td class="n">$150.00</td><td class="n auto">$25.00</td><td></td><td class="n due">$125.00</td></tr>
+  </table></div>
+</div>
+
+<div class="card">
+  <b>Insurance Claims Status tab</b>
+  <div class="shot"><table>
+    <tr><th>Claim ID</th><th>Session ID</th><th>Client Code (auto)</th><th>Submitted</th><th>Billed</th><th>Status</th><th>Insurer Paid</th><th>Date Paid</th><th>Days Open (auto)</th></tr>
+    <tr><td>CL-001</td><td>S-0002</td><td class="auto">C-002</td><td>2026-09-16</td><td class="n">$150.00</td><td>Paid</td><td class="n">$95.00</td><td>2026-10-05</td><td class="n auto">19</td></tr>
+    <tr><td>CL-002</td><td>S-0005</td><td class="auto">C-005</td><td>2026-10-14</td><td class="n">$150.00</td><td>Pending</td><td></td><td></td><td class="n auto">counts up daily</td></tr>
+  </table></div>
+</div>
+
+<div class="card">
+  <b>Yearly Summary tab (Year = 2026)</b>
+  <div class="shot"><table>
+    <tr><th>Item</th><th>Amount</th></tr>
+    <tr><td>Sessions attended</td><td class="n">4</td></tr>
+    <tr><td>Late cancels + no-shows</td><td class="n">1</td></tr>
+    <tr><td>Fees charged</td><td class="n">$620.00</td></tr>
+    <tr><td>Adjustments</td><td class="n">$30.00</td></tr>
+    <tr><td>Balance still due</td><td class="n">$175.00</td></tr>
+    <tr><td>Payments from clients / insurance</td><td class="n">$320.00 / $95.00</td></tr>
+    <tr><td>Total payments received</td><td class="n">$415.00</td></tr>
+    <tr><td>Claims submitted / still open</td><td class="n">2 / 1</td></tr>
+    <tr><td>Total expenses</td><td class="n">$386.85</td></tr>
+    <tr><td><b>Net (payments − expenses)</b></td><td class="n"><b>$28.15</b></td></tr>
+  </table></div>
+</div>
+
+<h2>How you get it</h2>
+<div class="card">
+  <ol class="steps">
+    <li>Buy on Etsy and download the PDF. It's a digital download, so nothing ships.</li>
+    <li>Open the link in the PDF on a computer and click <b>Make a copy</b>.</li>
+    <li>The tracker saves to your own Google Drive. You need a free Google account. We never see what you enter.</li>
+  </ol>
+</div>
+
+<h2>What it is not</h2>
+<div class="card">
   <ul>
-    <li>Not HIPAA-compliant software, an EHR or a billing service. We make no compliance claim.</li>
+    <li>Not HIPAA-compliant software, an EHR or a billing service. We make no compliance claim of any kind.</li>
     <li>No fields for names, dates of birth, member IDs, diagnoses or session notes.</li>
-    <li>No tax, legal or billing advice. Expense categories are only for organizing.</li>
+    <li>It doesn't submit claims, take payments or connect to your bank or EHR.</li>
+    <li>No tax, legal, billing or coding advice. Expense categories are only for organizing.</li>
+    <li>Built for Google Sheets. Not tested in Excel or Numbers.</li>
   </ul>
-</section>
+</div>
 
-<!-- PRODUCT 2: LANDLORD TRACKER -->
-<section class="product l" id="landlord">
-  <h2>Small Landlord Command Center</h2>
-  <p>A Google Sheets tracker for rent, expenses and repairs, with a yearly summary and a printable binder. Made for DIY landlords with 1–4 units.</p>
-
-  <div class="buy">
-    <a id="buy-landlord" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
-    <p class="small">Not on sale yet. This button goes live when the Etsy listing is published.</p>
-  </div>
-
-  <h3>What's included</h3>
-  <ul>
-    <li><b>Rent tab:</b> one row per month per unit: rent due, amount paid, date paid, late Y/N.</li>
-    <li><b>Expenses tab:</b> date, property, category (dropdown), amount, vendor, receipt link.</li>
-    <li><b>Repairs tab:</b> date reported, unit, issue, vendor, cost, date fixed, status.</li>
-    <li><b>Yearly Summary tab:</b> rent collected, expenses by category, repair costs, total costs and net for the year, all calculated by formula.</li>
-    <li><b>Printable binder (PDF, US Letter, 7 pages):</b> property sheet, tenant contact sheet, move-in/move-out inspection checklist, maintenance request log and rent receipt log.</li>
-  </ul>
-
-  <h3>Yearly Summary preview <span class="tag">EXAMPLE DATA, fictional</span></h3>
-  <p class="small">Made-up numbers for one made-up unit ("Unit A, 12 Maple St"). Not a real property, real results or a typical outcome.</p>
-  <table>
-    <tr><th>Item</th><th>2025 (example)</th></tr>
-    <tr><td>Rent collected</td><td class="num">$13,800</td></tr>
-    <tr><td>Expenses (insurance, property tax, utilities, supplies)</td><td class="num">$4,898</td></tr>
-    <tr><td>Repair costs (1 repair)</td><td class="num">$240</td></tr>
-    <tr><td>Total costs</td><td class="num">$5,138</td></tr>
-    <tr><td><b>Net (rent − total costs)</b></td><td class="num"><b>$8,662</b></td></tr>
-  </table>
-
-  <h3>What it is not</h3>
-  <ul>
-    <li>No leases, eviction notices or state-specific legal forms.</li>
-    <li>No tax advice. Expense categories are only for keeping things organized.</li>
-    <li>It's not property-management software. It's a spreadsheet you keep and edit yourself.</li>
-  </ul>
-</section>
+<div class="buy">
+  <a id="buy-etsy-2" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
+</div>
 
 <footer>
-  <p>Organizational tools only. Not tax, legal, billing or compliance advice. All numbers on this page are fictional example data. No reviews are shown because nothing has sold yet.</p>
+  <p><b>Questions?</b> Message us through our Etsy shop.</p>
+  <p>Organizational tool only. Not tax, legal, billing or compliance advice. Where you keep this file, and whether your Google account is suitable for practice records, is your responsibility. All numbers on this page are fictional example data. No reviews are shown because none exist yet. The template was designed with the help of AI tools.</p>
 </footer>
 </div>
 
 <script>
-// Leave each URL empty until its real Etsy listing exists. While a URL is empty, its button stays disabled.
-// No prices are set here. Etsy shows the live price on the listing.
-var LISTINGS = {
-  "buy-therapist": "",
-  "buy-landlord": ""
-};
+// Paste the real Etsy listing URL in place of {{ETSY_LINK}}. Until then both buttons stay disabled.
+var ETSY_LINK = "{{ETSY_LINK}}";
 (function () {
+  if (!ETSY_LINK || ETSY_LINK.indexOf('{{') === 0) return;
   var page = new URLSearchParams(window.location.search);
-  Object.keys(LISTINGS).forEach(function (id) {
-    var url = LISTINGS[id];
+  var out = new URL(ETSY_LINK);
+  var found = false;
+  page.forEach(function (v, k) {
+    if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
+  });
+  if (!found) out.searchParams.set('utm_source', 'direct');
+  ['buy-etsy', 'buy-etsy-2'].forEach(function (id) {
     var btn = document.getElementById(id);
-    if (!url || !btn) return;
-    var out = new URL(url);
-    var found = false;
-    page.forEach(function (v, k) {
-      if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
-    });
-    if (!found || !out.searchParams.get('utm_source')) out.searchParams.set('utm_source', 'direct');
     btn.href = out.toString();
     btn.removeAttribute('aria-disabled');
-    btn.textContent = 'View on Etsy';
+    btn.textContent = 'Buy on Etsy';
   });
 })();
 </script>
