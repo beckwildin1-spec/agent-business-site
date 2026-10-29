@@ -102,9 +102,13 @@ footer { font-size:.85rem; color:#5b5a55; border-top:1px solid var(--taupe); mar
 </div>
 
 <script>
-// Growth swaps {{LISTING_URL}} for the real Etsy listing URL (cut at "?") once Beck reports it.
-// Until then both buttons stay disabled. UTM tags on this page's address are passed through to Etsy.
+// ===================== ETSY LISTING URL PLACEHOLDER (Growth) =====================
+// Replace {{LISTING_URL}} on the next line with the real listing URL, cut at "?",
+// e.g. "https://www.etsy.com/listing/1234567890/wedding-budget-spreadsheet" (format example only).
+// This is the ONLY place the URL goes. Until then both buy buttons stay disabled ("Coming soon on Etsy").
+// UTM tags on this page's address are passed through to Etsy.
 var LISTING_URL = "{{LISTING_URL}}";
+// ==================================================================================
 (function () {
   if (!LISTING_URL || LISTING_URL.indexOf('{{') === 0) return;
   var page = new URLSearchParams(window.location.search);
