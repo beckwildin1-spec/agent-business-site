@@ -3,103 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Private Practice Billing &amp; Income Tracker (Google Sheets template)</title>
-<meta name="description" content="A Google Sheets template for solo therapists and counselors: sessions, payments, insurance claim status, expenses and a yearly summary. Built for client codes, not names. Sold on Etsy.">
+<title>Wedding Budget &amp; Planner: Google Sheets template with budget vs actual dashboard</title>
+<meta name="description" content="A wedding budget spreadsheet for Google Sheets: budget vs actual by category, vendor payments with due dates, a guest list with RSVP tally and a checklist in one file. Sold on Etsy.">
+<!-- Open Graph: used when someone saves this page to Pinterest -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TidyLedgerSheets">
+<meta property="og:title" content="Wedding Budget &amp; Planner (Google Sheets)">
+<meta property="og:description" content="Budget vs actual dashboard, vendor payments due, guest list with RSVP tally and a checklist in one Google Sheet.">
+<meta property="og:image" content="https://beckwildin1-spec.github.io/agent-business-site/img/shots/shot1-dashboard.png">
 <!-- PINTEREST SITE VERIFICATION: paste the meta tag Pinterest gives you on the next line (public tag, not a secret). -->
 <!-- PINTEREST_VERIFY_SLOT -->
 <style>
-:root { --b:#3d5a80; --r:#b42318; --bg:#f7f6f2; }
+:root { --sage:#6b7f6a; --taupe:#ece4da; --ivory:#f7f4ef; --terra:#a34a3f; --blush:#e9d6cf; --text:#3b3a36; }
 * { box-sizing:border-box; }
-body { margin:0; font-family:-apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#222; background:var(--bg); line-height:1.5; }
-.wrap { max-width:780px; margin:0 auto; padding:24px 18px 48px; }
-h1 { font-size:1.9rem; line-height:1.2; margin:8px 0 6px; color:var(--b); }
-h2 { font-size:1.25rem; color:var(--b); margin:28px 0 8px; }
-.sub { font-size:1.05rem; margin:0 0 12px; }
-.card { background:#fff; border:1px solid #ddd; border-radius:12px; padding:18px 20px; margin:18px 0; }
-.buy { text-align:center; margin:18px 0 6px; }
-.btn { display:inline-block; padding:14px 30px; border-radius:8px; font-size:1.1rem; font-weight:bold; text-decoration:none; color:#fff; background:var(--b); }
-.btn[aria-disabled="true"] { background:#9aa3ad; cursor:not-allowed; pointer-events:none; }
-.small { font-size:.85rem; color:#555; }
-.note { background:#fdf0ef; border-left:5px solid var(--r); padding:10px 14px; margin:12px 0; }
+body { margin:0; font-family:-apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--ivory); line-height:1.55; }
+.wrap { max-width:820px; margin:0 auto; padding:24px 18px 48px; }
+h1 { font-size:2rem; line-height:1.2; margin:8px 0 6px; color:var(--sage); }
+h2 { font-size:1.3rem; color:var(--sage); margin:30px 0 8px; }
+.sub { font-size:1.08rem; margin:0 0 12px; }
+.card { background:#fff; border:1px solid var(--taupe); border-radius:12px; padding:18px 20px; margin:16px 0; }
+.buy { text-align:center; margin:20px 0 6px; }
+.btn { display:inline-block; padding:14px 30px; border-radius:8px; font-size:1.1rem; font-weight:bold; text-decoration:none; color:#fff; background:var(--sage); }
+.btn[aria-disabled="true"] { background:#a8aea7; cursor:not-allowed; pointer-events:none; }
+.small { font-size:.85rem; color:#5b5a55; }
 ul { padding-left:20px; margin:0; } li { margin:5px 0; }
-.shot { overflow-x:auto; margin:10px 0 4px; }
-table { border-collapse:collapse; font-size:.85rem; background:#fff; min-width:100%; }
-th, td { border:1px solid #cfd6df; padding:5px 8px; text-align:left; white-space:nowrap; }
-th { background:#dfe7f2; }
-td.n { text-align:right; } td.auto { background:#f3f3f3; font-style:italic; } td.due { background:#fde9c8; }
-.tag { display:inline-block; background:#fff3c4; border:1px solid #e0c96b; border-radius:4px; padding:1px 6px; font-size:.72rem; font-weight:bold; vertical-align:middle; }
+.pins { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; }
+.pin { background:#fff; border:1px solid var(--taupe); border-radius:12px; overflow:hidden; }
+.pin img { width:100%; display:block; background:var(--blush); }
+.pin p { margin:0; padding:10px 12px; font-size:.92rem; }
 .steps { counter-reset:s; list-style:none; padding:0; }
 .steps li { counter-increment:s; padding-left:34px; position:relative; margin:8px 0; }
-.steps li::before { content:counter(s); position:absolute; left:0; top:0; width:24px; height:24px; border-radius:50%; background:var(--b); color:#fff; text-align:center; font-weight:bold; font-size:.85rem; line-height:24px; }
-footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:30px; padding-top:12px; }
+.steps li::before { content:counter(s); position:absolute; left:0; top:0; width:24px; height:24px; border-radius:50%; background:var(--sage); color:#fff; text-align:center; font-weight:bold; font-size:.85rem; line-height:24px; }
+.ai { background:var(--blush); border-radius:8px; padding:8px 12px; font-size:.9rem; }
+footer { font-size:.85rem; color:#5b5a55; border-top:1px solid var(--taupe); margin-top:30px; padding-top:12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <h1>Private Practice Billing &amp; Income Tracker</h1>
-  <p class="sub">A Google Sheets template for solo therapists and counselors. Log sessions, payments, insurance claim status and expenses in one file. Your yearly totals are worked out by formula.</p>
+  <h1>Wedding Budget &amp; Planner for Google Sheets</h1>
+  <p class="sub">Budget vs actual, vendor payments due, guest list RSVPs and your checklist, all in one Google Sheet. You enter planned amounts and payments, and the Dashboard does the math by formula.</p>
+  <p class="ai"><b>Made with AI help:</b> we designed this template with the help of AI tools. The pictures below are real screenshots of the sheet with made-up example data.</p>
 </header>
-
-<div class="note"><b>Built for client codes, not names.</b> Every tab says "use codes only." The Client Code column accepts only codes like C-001, so a typed name is rejected. Client codes reduce what's stored but don't make records de-identified.</div>
 
 <div class="buy">
   <a id="buy-etsy" class="btn" aria-disabled="true" role="button">Coming soon on Etsy</a>
-  <p class="small">Sold and delivered through Etsy. The current price is shown on the Etsy listing.</p>
+  <p class="small">Sold and delivered through Etsy as a digital download. Etsy shows the current price.</p>
+</div>
+
+<!-- Pinterest-friendly section: tall cards, each image has a pin description and links back to the listing. -->
+<h2 id="look">Save it for later: a look inside</h2>
+<p class="small">Planning on Pinterest? Save any of these. Every image is a real screenshot with fictional example data, not a real couple's numbers.</p>
+<div class="pins">
+  <div class="pin"><img src="img/shots/shot1-dashboard.png" alt="Wedding budget dashboard in Google Sheets showing planned vs actual amounts by category, paid so far, still owed and an RSVP tally (example data)" data-pin-description="Wedding budget spreadsheet for Google Sheets: budget vs actual by category, paid so far and still owed on one Dashboard." loading="lazy" onerror="this.parentNode.style.display='none'"><p><b>Dashboard:</b> budget vs actual by category, what's paid, what's still owed, and the next payment due.</p></div>
+  <div class="pin"><img src="img/shots/shot3-vendors.png" alt="Vendor payments tab with due dates, Paid checkboxes and an automatic status column (example data)" data-pin-description="Wedding vendor payment tracker in Google Sheets: one row per payment, due dates, Paid checkbox, status shows OVERDUE or Due soon." loading="lazy" onerror="this.parentNode.style.display='none'"><p><b>Vendors &amp; Payments Due:</b> one row per payment. Status shows Paid, OVERDUE, Due soon or Upcoming.</p></div>
+  <div class="pin"><img src="img/shots/shot4-guests.png" alt="Wedding guest list tab with RSVP dropdown and a yes / no / pending tally (example data)" data-pin-description="Wedding guest list and RSVP tracker in Google Sheets: yes / no / pending counted as parties and as people." loading="lazy" onerror="this.parentNode.style.display='none'"><p><b>Guest List:</b> RSVP dropdown, meal choice, table number, thank-you sent, with a yes / no / pending tally.</p></div>
+  <div class="pin"><img src="img/shots/shot5-checklist.png" alt="Wedding planning checklist tab with tick boxes and a percent-done box (example data)" data-pin-description="Wedding planning checklist in Google Sheets with a percent-done progress box, next to your budget and guest list." loading="lazy" onerror="this.parentNode.style.display='none'"><p><b>Checklist:</b> 10 starter tasks with timing, who and a Done box, plus % done.</p></div>
 </div>
 
 <h2>What's in the file</h2>
 <div class="card">
   <ul>
-    <li><b>Sessions:</b> date, client code, service, in person or telehealth, minutes, fee, payer type, attendance. <i>Paid to Date</i> and <i>Balance Due</i> fill in on their own.</li>
-    <li><b>Payments:</b> client and insurance payments, each linked to a session.</li>
-    <li><b>Insurance Claims Status:</b> date submitted, amount billed, status (Not submitted, Submitted, Pending, Paid, Partially paid, Denied, Resubmitted, Written off), insurer paid, days open, follow-up date.</li>
-    <li><b>Expenses:</b> 10 categories (rent/office, software &amp; EHR, liability insurance, licensing &amp; CE and more), vendor, amount, receipt link.</li>
-    <li><b>Yearly Summary:</b> sessions, fees, adjustments, balance due, payments by source, claim counts, expenses by category, net, and a month-by-month table. Change the year in one cell.</li>
-    <li><b>Instructions tab</b> and labeled, fictional example rows that you delete before you start.</li>
+    <li><b>Dashboard:</b> total planned, booked, paid so far, still owed, under or over budget (red when over), a wedding-date countdown, your next unpaid payment, RSVP counts and checklist progress. The only thing you type is your wedding date.</li>
+    <li><b>Budget:</b> starter categories (Venue, Catering, Photography, Attire, Flowers &amp; decor, Music, Other) with a planned amount each. You can rename them or add your own.</li>
+    <li><b>Vendors &amp; Payments Due:</b> each payment (a deposit or final balance, for example) gets its own row with amount, due date and a Paid checkbox.</li>
+    <li><b>Guest List:</b> party name, household, side, people in party, RSVP, meal choice, table number and a thank-you-sent checkbox.</li>
+    <li><b>Checklist</b> and a short <b>Instructions</b> tab. Example rows are fictional and marked EXAMPLE.</li>
   </ul>
-</div>
-
-<h2>A look inside <span class="tag">EXAMPLE DATA, fictional</span></h2>
-<p class="small">These are the template's own example rows: five made-up sessions for codes C-001 to C-005. They aren't real results or a typical outcome.</p>
-
-<div class="card">
-  <b>Sessions tab</b>
-  <div class="shot"><table>
-    <tr><th>Session ID</th><th>Date</th><th>Client Code</th><th>Service</th><th>Attendance</th><th>Fee</th><th>Paid to Date (auto)</th><th>Adjustment</th><th>Balance Due (auto)</th></tr>
-    <tr><td>S-0001</td><td>2026-09-08</td><td>C-001</td><td>Intake</td><td>Attended</td><td class="n">$180.00</td><td class="n auto">$180.00</td><td></td><td class="n auto">$0.00</td></tr>
-    <tr><td>S-0002</td><td>2026-09-15</td><td>C-002</td><td>Individual</td><td>Attended</td><td class="n">$150.00</td><td class="n auto">$120.00</td><td class="n">$30.00</td><td class="n auto">$0.00</td></tr>
-    <tr><td>S-0003</td><td>2026-09-22</td><td>C-003</td><td>Individual</td><td>Attended</td><td class="n">$90.00</td><td class="n auto">$90.00</td><td></td><td class="n auto">$0.00</td></tr>
-    <tr><td>S-0004</td><td>2026-10-06</td><td>C-004</td><td>Couples</td><td>Late cancel</td><td class="n">$50.00</td><td class="n auto">$0.00</td><td></td><td class="n due">$50.00</td></tr>
-    <tr><td>S-0005</td><td>2026-10-13</td><td>C-005</td><td>Individual</td><td>Attended</td><td class="n">$150.00</td><td class="n auto">$25.00</td><td></td><td class="n due">$125.00</td></tr>
-  </table></div>
-</div>
-
-<div class="card">
-  <b>Insurance Claims Status tab</b>
-  <div class="shot"><table>
-    <tr><th>Claim ID</th><th>Session ID</th><th>Client Code (auto)</th><th>Submitted</th><th>Billed</th><th>Status</th><th>Insurer Paid</th><th>Date Paid</th><th>Days Open (auto)</th></tr>
-    <tr><td>CL-001</td><td>S-0002</td><td class="auto">C-002</td><td>2026-09-16</td><td class="n">$150.00</td><td>Paid</td><td class="n">$95.00</td><td>2026-10-05</td><td class="n auto">19</td></tr>
-    <tr><td>CL-002</td><td>S-0005</td><td class="auto">C-005</td><td>2026-10-14</td><td class="n">$150.00</td><td>Pending</td><td></td><td></td><td class="n auto">counts up daily</td></tr>
-  </table></div>
-</div>
-
-<div class="card">
-  <b>Yearly Summary tab (Year = 2026)</b>
-  <div class="shot"><table>
-    <tr><th>Item</th><th>Amount</th></tr>
-    <tr><td>Sessions attended</td><td class="n">4</td></tr>
-    <tr><td>Late cancels + no-shows</td><td class="n">1</td></tr>
-    <tr><td>Fees charged</td><td class="n">$620.00</td></tr>
-    <tr><td>Adjustments</td><td class="n">$30.00</td></tr>
-    <tr><td>Balance still due</td><td class="n">$175.00</td></tr>
-    <tr><td>Payments from clients / insurance</td><td class="n">$320.00 / $95.00</td></tr>
-    <tr><td>Total payments received</td><td class="n">$415.00</td></tr>
-    <tr><td>Claims submitted / still open</td><td class="n">2 / 1</td></tr>
-    <tr><td>Total expenses</td><td class="n">$386.85</td></tr>
-    <tr><td><b>Net (payments − expenses)</b></td><td class="n"><b>$28.15</b></td></tr>
-  </table></div>
 </div>
 
 <h2>How you get it</h2>
@@ -107,18 +78,16 @@ footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:30p
   <ol class="steps">
     <li>Buy on Etsy and download the PDF. It's a digital download, so nothing ships.</li>
     <li>Open the link in the PDF on a computer and click <b>Make a copy</b>.</li>
-    <li>The tracker saves to your own Google Drive. You need a free Google account. We never see what you enter.</li>
+    <li>The sheet saves to your own Google Drive, and you can share it with your partner. You need a free Google account. We never see what you enter.</li>
   </ol>
 </div>
 
 <h2>What it is not</h2>
 <div class="card">
   <ul>
-    <li>Not HIPAA-compliant software, an EHR or a billing service. We make no compliance claim of any kind.</li>
-    <li>No fields for names, dates of birth, member IDs, diagnoses or session notes.</li>
-    <li>It doesn't submit claims, take payments or connect to your bank or EHR.</li>
-    <li>No tax, legal, billing or coding advice. Expense categories are only for organizing.</li>
-    <li>Built for Google Sheets. Not tested in Excel or Numbers.</li>
+    <li>No seating chart, timeline or day-of schedule. Guests don't RSVP through it, because it's for your own tracking.</li>
+    <li>Built for Google Sheets in a web browser. There's no Excel or Numbers version, and it hasn't been tested on phones.</li>
+    <li>A planning tool only, not financial advice. Totals are only as accurate as the amounts you enter.</li>
   </ul>
 </div>
 
@@ -128,28 +97,30 @@ footer { font-size:.85rem; color:#555; border-top:1px solid #ddd; margin-top:30p
 
 <footer>
   <p><b>Questions?</b> Message us through our Etsy shop.</p>
-  <p>Organizational tool only. Not tax, legal, billing or compliance advice. Where you keep this file, and whether your Google account is suitable for practice records, is your responsibility. All numbers on this page are fictional example data. No reviews are shown because none exist yet. The template was designed with the help of AI tools.</p>
+  <p>All numbers in the screenshots are fictional example data. No reviews are shown because none exist yet. Google Sheets is a Google product. We're not affiliated with Google.</p>
 </footer>
 </div>
 
 <script>
-// Paste the real Etsy listing URL in place of {{ETSY_LINK}}. Until then both buttons stay disabled.
-var ETSY_LINK = "{{ETSY_LINK}}";
+// Growth swaps {{LISTING_URL}} for the real Etsy listing URL (cut at "?") once Beck reports it.
+// Until then both buttons stay disabled. UTM tags on this page's address are passed through to Etsy.
+var LISTING_URL = "{{LISTING_URL}}";
 (function () {
-  if (!ETSY_LINK || ETSY_LINK.indexOf('{{') === 0) return;
+  if (!LISTING_URL || LISTING_URL.indexOf('{{') === 0) return;
   var page = new URLSearchParams(window.location.search);
-  var out = new URL(ETSY_LINK);
+  var out = new URL(LISTING_URL);
   var found = false;
   page.forEach(function (v, k) {
     if (k.toLowerCase().indexOf('utm_') === 0) { out.searchParams.set(k.toLowerCase(), String(v).toLowerCase()); found = true; }
   });
-  if (!found) out.searchParams.set('utm_source', 'direct');
+  if (!found) { out.searchParams.set('utm_source', 'site'); out.searchParams.set('utm_medium', 'landing'); }
   ['buy-etsy', 'buy-etsy-2'].forEach(function (id) {
     var btn = document.getElementById(id);
     btn.href = out.toString();
     btn.removeAttribute('aria-disabled');
-    btn.textContent = 'Buy on Etsy';
+    btn.textContent = 'Get it on Etsy';
   });
+  document.querySelectorAll('.pin img').forEach(function (img) { img.setAttribute('data-pin-url', LISTING_URL); });
 })();
 </script>
 </body>
